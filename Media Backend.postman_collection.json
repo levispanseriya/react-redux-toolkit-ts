@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "9e5476ab-f49c-4528-8bea-c5b3bac3a47d",
+		"name": "Media Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27039302"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"159@yopmail.com\",\r\n    \"password\" :\"999@123\"\r\n}"
+						},
+						"url": "localhost:8080/api/auth/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyEmail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/verifyEmail?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlzVmVyaWZpZWQiOmZhbHNlLCJ1c2VyaWQiOjEsImVtYWlsIjoiMjM1NkB5b3BtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGU3Nk9uQ3ZULmI1VGo1cW1jM1JhVXU3M2xneC5PMHM3MGtsVzdlWjZzYWJ3MG05a3RvUXBhIn0sImlhdCI6MTY5MTU1NjUyMywiZXhwIjoxNjkxNTYwMTIzfQ.7EGKPLz8GQi6VT1T7zUPwpgqdidcaigL1B2EtowaawA",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"verifyEmail"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlzVmVyaWZpZWQiOmZhbHNlLCJ1c2VyaWQiOjEsImVtYWlsIjoiMjM1NkB5b3BtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGU3Nk9uQ3ZULmI1VGo1cW1jM1JhVXU3M2xneC5PMHM3MGtsVzdlWjZzYWJ3MG05a3RvUXBhIn0sImlhdCI6MTY5MTU1NjUyMywiZXhwIjoxNjkxNTYwMTIzfQ.7EGKPLz8GQi6VT1T7zUPwpgqdidcaigL1B2EtowaawA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"89898@yopmail.com\",\r\n    \"password\" :\"999@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhdHR2YW1AeW9wbWFpbC5jb20iLCJpYXQiOjE2OTExMzEzNzMsImV4cCI6MTY5MTEzNDk3M30.73KYhEF9RDDvydUghVtYK09o-xyeqFOV0HHMUWezw5E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sattvam@yopmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/auth/forgot-password"
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ijg5ODlAeW9wbWFpbC5jb20iLCJpYXQiOjE2OTEzODU1ODUsImV4cCI6MTY5MTM4OTE4NX0.wkZeIDUCtCaC4V2cDdmh4U6I1TVZKV-T7ig4mIFIXE8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTEzODgwNzgsImV4cCI6MTY5MTM4OTg3OH0.bCYHPChJ8NBRJdBWsYXRLQ8iKEf52W2ak5Psn3KV-X8",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTEzODgwNzgsImV4cCI6MTY5MTM4OTg3OH0.bCYHPChJ8NBRJdBWsYXRLQ8iKEf52W2ak5Psn3KV-X8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjI1NkB5b3BtYWlsLmNvbSIsImlhdCI6MTY5MTQ4NDAwNiwiZXhwIjoxNjkxNDg3NjA2fQ.wKqa51cpXrebEWcrXH1nnY2basQWuLb3WiGlbr9igb4",
+								"type": "text"
+							}
+						],
+						"url": "localhost:8080/api/auth/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstname",
+									"value": "Bhavin",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "patel",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "7896589658",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Dell/Pictures/Capture.PNG"
+								}
+							]
+						},
+						"url": "localhost:8080/user/createUser"
+					},
+					"response": []
+				},
+				{
+					"name": "GetUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "localhost:8080/user/getUser"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjI1NkB5b3BtYWlsLmNvbSIsImlhdCI6MTY5MTQ4OTY1MiwiZXhwIjoxNjkxNDkzMjUyfQ.rGpiUPwb4p7P5DF_xBQDcl6qsm8FK-eQzfKcntQoGEk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstname",
+									"value": "Priya",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "Patel",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "7878787888",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Dell/Pictures/Kankudi/Capture.PNG",
+									"disabled": true
+								}
+							]
+						},
+						"url": "localhost:8080/user/updateUser/1"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "mobile",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstname",
+									"value": "Levis",
+									"type": "text"
+								},
+								{
+									"key": "lastname",
+									"value": "P",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "9999999999",
+									"type": "text"
+								}
+							]
+						},
+						"url": "localhost:8080/user/updateUser/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "addBook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookname\":\"A Suitable Boy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/book/addBook"
+					},
+					"response": []
+				},
+				{
+					"name": "borrowBook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/book/borrow?bookId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"borrow"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "globalSearch",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/book/globalSearch?filterBy=returnDate&fromDate=2022-08-09 05:16:16&toDate=2023-08-10 05:16:16",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"globalSearch"
+							],
+							"query": [
+								{
+									"key": "filterBy",
+									"value": "returnDate",
+									"description": "borrowDate, returnDate"
+								},
+								{
+									"key": "fromDate",
+									"value": "2022-08-09 05:16:16"
+								},
+								{
+									"key": "toDate",
+									"value": "2023-08-10 05:16:16"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "bookname",
+									"value": "ind",
+									"disabled": true
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retuenBook",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/book/  \"/returnBook/:bookId\",\n",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"  \"",
+								"returnBook",
+								":bookId\",\n"
+							],
+							"variable": [
+								{
+									"key": "bookId\",\n",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Others",
+			"item": [
+				{
+					"name": "WhoOwnBook",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/book/WhoOwnBook/4?",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"WhoOwnBook",
+								"4"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AvailableBook",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getBook",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{authorization}}",
+								"type": "text"
+							}
+						],
+						"url": "localhost:8080/book/search/name/swa"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Images",
+			"item": [
+				{
+					"name": "Upload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxldmlzQHlvcG1haWwuY29tIiwiaWF0IjoxNjkxMTQzMTkzLCJleHAiOjE2OTExNDY3OTN9.BrP0CUhC5qgYzQ5HiPy4pPg1uQAh-oMgp5cRS42SYww",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Dell/Pictures/photo_2019-12-31_10-09-03.jpg"
+								}
+							]
+						},
+						"url": "localhost:8080/upload"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/delete?imageid=9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"delete"
+							],
+							"query": [
+								{
+									"key": "imageid",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxldmlzMjU2QHlvcG1haWwuY29tIiwiaWF0IjoxNjkxMDY0ODQwLCJleHAiOjE2OTEwNjg0NDB9.3l6vkS6qDsN8eUfxfYJpayqwGJoXRin2qn74fujepfA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Dell/Pictures/Capture.PNG"
+								}
+							]
+						},
+						"url": "localhost:8080/images/11"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
